@@ -12,8 +12,20 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Daichi Blog 2",
+  title: {
+    default: "Daichi Blog 2",
+    template: "%s | Daichi Blog 2",
+  },
   description: "個人の技術ブログ",
+  openGraph: {
+    title: "Daichi Blog 2",
+    description: "個人の技術ブログ",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({

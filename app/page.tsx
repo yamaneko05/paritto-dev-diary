@@ -1,5 +1,11 @@
 import { getAllPosts } from "@/lib/posts";
 import { Search } from "@/components/search";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "記事一覧",
+  description: "技術記事の一覧ページです。",
+};
 
 export default function Home() {
   const posts = getAllPosts();
