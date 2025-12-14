@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
+import { rehypeCloudinaryImages } from "./rehype-cloudinary-images";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -16,6 +17,7 @@ export type PostMeta = {
   date: string;
   description: string;
   tags: string[];
+  thumbnail?: string;
 };
 
 export type Post = PostMeta & {
@@ -42,6 +44,7 @@ export function getAllPosts(): PostMeta[] {
         date: data.date || "",
         description: data.description || "",
         tags: data.tags || [],
+        thumbnail: data.thumbnail,
       };
     });
 
@@ -62,6 +65,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeCloudinaryImages)
     .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(content);
@@ -73,6 +77,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     date: data.date || "",
     description: data.description || "",
     tags: data.tags || [],
+    thumbnail: data.thumbnail,
     content: contentHtml,
   };
 }

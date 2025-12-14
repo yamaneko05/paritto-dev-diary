@@ -3,6 +3,7 @@ title: "Next.js App Routerの基本"
 date: "2024-12-13"
 description: "Next.js 13から導入されたApp Routerの基本的な使い方を解説します。"
 tags: ["Next.js", "React", "チュートリアル"]
+thumbnail: "cld-sample-5"
 ---
 
 ## App Routerとは

@@ -35,7 +35,7 @@ export function Search({ posts }: SearchProps) {
           {query ? "検索結果が見つかりませんでした。" : "記事はまだありません。"}
         </p>
       ) : (
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {filteredPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

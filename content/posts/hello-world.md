@@ -3,6 +3,7 @@ title: "Hello World - ブログを始めました"
 date: "2024-12-14"
 description: "このブログの最初の記事です。Next.jsとMarkdownで構築しています。"
 tags: ["お知らせ", "Next.js"]
+thumbnail: "sample"
 ---
 
 ## はじめに
@@ -45,6 +46,12 @@ const post: Post = {
   content: "最初の記事です",
 };
 ```
+
+## 画像の表示
+
+Cloudinaryを使った画像表示もサポートしています。
+
+![サンプル画像](cloudinary://sample)
 
 ## まとめ
 

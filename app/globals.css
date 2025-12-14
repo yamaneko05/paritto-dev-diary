@@ -127,7 +127,6 @@
 
 /* 記事本文用スタイル */
 .prose {
-  max-width: 65ch;
   color: var(--foreground);
   line-height: 1.75;
 }
