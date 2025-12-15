@@ -13,7 +13,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Link href={`/posts/${post.slug}`}>
-      <Card className="overflow-hidden transition-colors hover:bg-muted/50 pt-0 gap-0 h-full">
+      <Card className="overflow-hidden transition-colors hover:bg-muted/50 pt-0 pb-4 gap-0 h-full">
         {thumbnailUrl && (
           <div className="relative aspect-video w-full">
             <Image
@@ -25,14 +25,14 @@ export function PostCard({ post }: PostCardProps) {
             />
           </div>
         )}
-        <CardHeader className="pt-6 pb-4">
+        <CardHeader className="p-4 pb-3">
           <CardTitle className="text-xl">{post.title}</CardTitle>
           <time className="text-sm text-muted-foreground">{post.date}</time>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-4">
           <p className="text-muted-foreground">{post.description}</p>
           {post.tags.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
