@@ -14,7 +14,9 @@ export function Search({ posts }: SearchProps) {
   const [query, setQuery] = useState("");
 
   const filteredPosts = posts.filter((post) => {
-    const searchTarget = `${post.title} ${post.description} ${post.tags.join(" ")}`.toLowerCase();
+    const searchTarget = `${post.title} ${post.description} ${post.tags.join(
+      " "
+    )}`.toLowerCase();
     return searchTarget.includes(query.toLowerCase());
   });
 
@@ -27,12 +29,14 @@ export function Search({ posts }: SearchProps) {
           placeholder="記事を検索..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="pl-10"
+          className="pl-10 max-w-72"
         />
       </div>
       {filteredPosts.length === 0 ? (
         <p className="text-muted-foreground">
-          {query ? "検索結果が見つかりませんでした。" : "記事はまだありません。"}
+          {query
+            ? "検索結果が見つかりませんでした。"
+            : "記事はまだありません。"}
         </p>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
