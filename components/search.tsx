@@ -39,7 +39,7 @@ export function Search({ posts }: SearchProps) {
             : "記事はまだありません。"}
         </p>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid gap-6">
           {filteredPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

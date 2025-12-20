@@ -17,7 +17,13 @@ export function getCloudinaryUrl(
     return "";
   }
 
-  const { width, height, quality = "auto", format = "auto", crop = "fill" } = options;
+  const {
+    width,
+    height,
+    quality = "auto",
+    format = "auto",
+    crop = "fill",
+  } = options;
 
   const transformations: string[] = [];
 
@@ -27,19 +33,10 @@ export function getCloudinaryUrl(
   if (quality) transformations.push(`q_${quality}`);
   if (format) transformations.push(`f_${format}`);
 
-  const transformString = transformations.length > 0 ? transformations.join(",") + "/" : "";
+  const transformString =
+    transformations.length > 0 ? transformations.join(",") + "/" : "";
 
   return `https://res.cloudinary.com/${cloudName}/image/upload/${transformString}${publicId}`;
-}
-
-export function getThumbnailUrl(publicId: string): string {
-  return getCloudinaryUrl(publicId, {
-    width: 800,
-    height: 450,
-    crop: "fill",
-    quality: "auto",
-    format: "auto",
-  });
 }
 
 export function getArticleImageUrl(publicId: string): string {

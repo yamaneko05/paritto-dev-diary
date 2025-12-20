@@ -9,12 +9,6 @@ export function Header() {
           <span className="text-primary">パリッと</span>開発日記
         </Link>
         <nav className="flex items-center gap-4">
-          <Link
-            href="/"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Home
-          </Link>
           <ThemeToggle />
         </nav>
       </div>
