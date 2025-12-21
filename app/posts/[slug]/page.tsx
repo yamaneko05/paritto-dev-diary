@@ -34,8 +34,8 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <article className="container mx-auto max-w-176 p-4 pb-12">
-      <header className="mb-8">
+    <div>
+      <div className="mb-8">
         <h1 className="mb-2 text-3xl font-bold">{post.title}</h1>
         <time className="text-muted-foreground">{post.date}</time>
         {post.tags.length > 0 && (
@@ -50,11 +50,11 @@ export default async function PostPage({ params }: Props) {
             ))}
           </div>
         )}
-      </header>
+      </div>
       <div
         className="prose dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-    </article>
+    </div>
   );
 }

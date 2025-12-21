@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "./globals.css";
+import { ProfileCard } from "@/components/profile-card";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="container max-w-172 mx-auto flex-1 p-4 pb-12">
+              {children}
+            </main>
             <Footer />
           </div>
         </ThemeProvider>
