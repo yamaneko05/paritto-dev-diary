@@ -5,9 +5,7 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
-import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
-import { rehypeCloudinaryImages } from "./rehype-cloudinary-images";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -63,8 +61,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
-    .use(rehypeCloudinaryImages)
-    .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(content);
   const contentHtml = processedContent.toString();

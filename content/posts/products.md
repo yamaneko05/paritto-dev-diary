@@ -36,7 +36,7 @@ Next15, microCMSによって作成されたブログサイトです
 
 ## imageable
 
-![imageable](cloudinary://imageable_m6bzax)
+![imageable](/posts/imageable.png)
 
 今回は初めてNext.jsを使ったWebサービスを公開しました。Next.jsのモダンな機能をたくさん使った実装になっていますので、それらの実装や開発した経験について紹介します。
 
@@ -46,7 +46,7 @@ Next15, microCMSによって作成されたブログサイトです
 
 ## あいフェス
 
-![あいフェス](cloudinary://aifes_qpwtd6)
+![あいフェス](/posts/あいフェス.png)
 
 愛知県内の文化祭の開催情報をまとめるサイトを作りました。100校ほどの情報を掲載し、2万回以上のPVを獲得しました、Google Ads審査に合格し広告を掲載しましたが、収益化には至ることができませんでした。
 
