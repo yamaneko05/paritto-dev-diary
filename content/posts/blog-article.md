@@ -24,7 +24,7 @@ tags: ["日用品", "在庫管理"]
 ![在庫一覧画面](/posts/stockee-items.png)
 
 **デモ**: https://stockee-theta.vercel.app/
-**GitHub**: https://github.com/yamaneko05/stockee
+**GitHub**: https://github.com/okmr2217/stockee
 
 ---
 
@@ -134,4 +134,4 @@ export const auth = betterAuth({
 同じような課題を持っている方は、ぜひStockeeを試してみてください。また、コードもGitHubで公開しているので、参考になれば幸いです。
 
 **デモ**: https://stockee-theta.vercel.app/
-**GitHub**: https://github.com/yamaneko05/stockee
+**GitHub**: https://github.com/okmr2217/stockee

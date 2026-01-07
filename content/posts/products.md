@@ -53,3 +53,11 @@ Next15, microCMSによって作成されたブログサイトです
 - **リリース:** 2023年 8月
 - **技術スタック:** WordPress
 - **リンク:** [公式Instagram](https://www.instagram.com/aifes_2023/)
+
+## myPortfolio
+
+HTML/CSS, JavaScriptのみで作ったポートフォリオサイトです。
+
+- **リリース:** 2023年 6月
+- **技術スタック:** HTML/CSS, JavaScrip
+- **リンク:** [myPortfolio](https://okmr2217.github.io/Portfolio/)
