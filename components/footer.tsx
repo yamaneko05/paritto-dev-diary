@@ -2,7 +2,7 @@ import { ProfileCard } from "./profile-card";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30 mt-16">
+    <footer className="border-t border-border bg-muted/30">
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <div className="mb-8 max-w-2xl">
           <ProfileCard />
