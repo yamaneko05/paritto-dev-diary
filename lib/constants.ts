@@ -4,22 +4,22 @@
  */
 export const PROFILE_LINKS = {
   yarukoto: {
-    demo: "", // TBD
-    repo: "", // TBD
-    blog: "", // TBD
+    demo: "",
+    repo: "https://github.com/okmr2217/yarukoto",
+    blog: "/posts/yarukoto",
   },
   monsterCall: {
     site: "https://monstercall.cans01.jp/",
-    blog: "", // TBD
+    blog: "",
   },
-  jansuko: {
-    demo: "", // TBD
-    repo: "", // TBD
-    blog: "", // TBD
+  aifes: {
+    demo: "",
+    repo: "https://github.com/okmr2217/aifes2023",
+    instagram: "https://www.instagram.com/aifes_2023/",
   },
   contact: {
-    github: "", // TBD
-    x: "", // TBD
-    email: "", // TBD
+    github: "https://github.com/okmr2217",
+    x: "",
+    email: "okumuradaichi2007@gmail.com",
   },
 } as const;

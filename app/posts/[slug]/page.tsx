@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -34,23 +35,24 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="mb-2 text-3xl font-bold">{post.title}</h1>
-        <time className="text-muted-foreground">{post.date}</time>
-        {post.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-secondary-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
+    <div className="space-y-8">
+      <PageHero title={post.title}>
+        <div className="flex flex-col gap-3 mt-1">
+          <time className="text-sm text-muted-foreground/80">{post.date}</time>
+          {post.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-secondary-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </PageHero>
       <div
         className="prose prose-sm sm:prose-base dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}

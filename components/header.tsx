@@ -16,11 +16,17 @@ export function Header() {
               className="transition-transform duration-300 group-hover:scale-110"
             />
           </div>
-          <h1 className="text-xl font-bold tracking-tight font-heading transition-all duration-300 group-hover:tech-gradient-text">
+          <h1 className="hidden md:block text-lg font-bold tracking-tight font-heading transition-all duration-300 group-hover:tech-gradient-text">
             パリッと開発日記
           </h1>
         </Link>
         <nav className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="relative text-sm font-medium font-heading transition-colors hover:text-accent after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:tech-gradient after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Blog
+          </Link>
           <Link
             href="/about"
             className="relative text-sm font-medium font-heading transition-colors hover:text-accent after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:tech-gradient after:transition-all after:duration-300 hover:after:w-full"
@@ -28,7 +34,7 @@ export function Header() {
             About
           </Link>
           <Link
-            href="/works"
+            href="/posts/products"
             className="relative text-sm font-medium font-heading transition-colors hover:text-accent after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:tech-gradient after:transition-all after:duration-300 hover:after:w-full"
           >
             Works

@@ -3,71 +3,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { PROFILE_LINKS } from "@/lib/constants";
 import { Github, Mail, Twitter } from "lucide-react";
+import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "工場・製造業向けの業務システム開発に携わりつつ、個人では自分や友人の困りごとを解決するWebアプリを作っています。",
+  description: "開発者のプロフィール、経歴、技術スタック、制作物などをまとめています。",
 };
 
 export default function AboutPage() {
   return (
     <div className="space-y-12">
-      {/* Hero Section */}
-      <section className="relative">
-        <div className="flex items-center gap-4 pb-8 border-b border-border">
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold font-heading mb-3 tech-gradient-text">
-              About
-            </h1>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              工場・製造業向けの業務システム開発に携わりつつ、個人では自分や友人の困りごとを解決するWebアプリを作っています。
-            </p>
-          </div>
-          <div className="hidden md:block w-1 h-20 tech-gradient rounded-full" />
-        </div>
-      </section>
+      <PageHero
+        title="About"
+        description="開発者のプロフィール、経歴、技術スタック、制作物などをまとめています。"
+      />
 
-      {/* Profile Card */}
-      <section className="relative">
-        <div className="flex flex-col md:flex-row gap-8 p-8 bg-card border border-border rounded-lg">
-          <div className="shrink-0">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden ring-4 ring-accent/20">
-              <Image
-                src="/profile.jpg"
-                alt="プロフィール画像"
-                width={128}
-                height={128}
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold font-heading mb-3">Daichi</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              2007年生まれの18歳。高校1年で中退後、アルバイトでプログラマーとしてキャリアをスタートしました。
-              18歳になったタイミングで正社員として入社し、現在はWeb開発に従事しています。
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-medium font-heading text-accent hover:underline"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/works"
-                className="inline-flex items-center gap-2 text-sm font-medium font-heading text-accent hover:underline"
-              >
-                Works
-              </Link>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-sm font-medium font-heading text-accent hover:underline"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
+      {/* Profile */}
+      <section className="flex items-center gap-6">
+        <div className="shrink-0 relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-accent/20">
+          <Image
+            src="/profile.jpg"
+            alt="プロフィール画像"
+            width={80}
+            height={80}
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold font-heading mb-2">Daichi</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            2007年生まれ。製造業向けシステム開発と個人開発をしています。
+          </p>
         </div>
       </section>
 
@@ -132,27 +98,65 @@ export default function AboutPage() {
           開発の流れ
         </h2>
 
-        <div className="space-y-4 max-w-4xl">
-          <div className="p-6 bg-muted/30 border-l-4 border-accent rounded-r-lg">
-            <p className="text-foreground leading-relaxed">
-              バイブコーディングでゼロから作るときは、まず課題ややりたいことを整理してAIにどのように解決できるか相談します。
-              それからアプリとしての要件定義を固めて、ページ構成やDB設計・API設計などを決めてマークダウンファイルにまとめます。
-              ワードとかエクセルよりマークダウンの方が簡単に扱えるし、AIとの相性も良いので気に入っています。
-            </p>
-          </div>
+        <div className="relative max-w-4xl">
+          {/* Vertical Flow Line */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-primary to-tech-cyan" />
 
-          <div className="p-6 bg-muted/30 border-l-4 border-primary rounded-r-lg">
-            <p className="text-foreground leading-relaxed">
-              実装時は、それらのマークダウンファイルをAIに参照させながら進めます。
-              リリース後は、実際に自分でしっかり使ったり、友人に使ってもらったりして、改善する必要がある箇所やいいアイデアを思い付いたらすぐにメモします（自分で作ったTODOリストアプリに記録しています）。
-              その改善アイデアのメモを見て、AIと相談しながら実装して、アプリの改善を繰り返していきます。
-            </p>
-          </div>
+          <div className="space-y-8">
+            {/* Step 1 */}
+            <div className="relative flex gap-3 md:gap-6">
+              <div className="relative shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-background border-2 border-accent flex items-center justify-center font-bold text-accent text-sm md:text-base z-10">
+                01
+              </div>
+              <div className="flex-1 pt-1 md:pt-2">
+                <h3 className="text-lg md:text-xl font-bold font-heading mb-2 text-accent">
+                  課題整理 & 要件定義
+                </h3>
+                <div className="p-4 md:p-6 bg-card border border-border rounded-lg">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
+                    バイブコーディングでゼロから作るときは、まず課題ややりたいことを整理してAIにどのように解決できるか相談します。
+                    それからアプリとしての要件定義を固めて、ページ構成やDB設計・API設計などを決めてマークダウンファイルにまとめます。
+                    ワードとかエクセルよりマークダウンの方が簡単に扱えるし、AIとの相性も良いので気に入っています。
+                  </p>
+                </div>
+              </div>
+            </div>
 
-          <div className="p-6 bg-muted/30 border-l-4 border-tech-cyan rounded-r-lg">
-            <p className="text-foreground leading-relaxed">
-              自分で使用頻度が高いアプリはやっぱり改善アイデアもたくさん出てくるし、改善することで自分に恩恵が受けられるのでモチベーションになります。
-            </p>
+            {/* Step 2 */}
+            <div className="relative flex gap-3 md:gap-6">
+              <div className="relative shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-background border-2 border-primary flex items-center justify-center font-bold text-primary text-sm md:text-base z-10">
+                02
+              </div>
+              <div className="flex-1 pt-1 md:pt-2">
+                <h3 className="text-lg md:text-xl font-bold font-heading mb-2 text-primary">
+                  実装 & リリース & フィードバック
+                </h3>
+                <div className="p-4 md:p-6 bg-card border border-border rounded-lg">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
+                    実装時は、それらのマークダウンファイルをAIに参照させながら進めます。
+                    リリース後は、実際に自分でしっかり使ったり、友人に使ってもらったりして、改善する必要がある箇所やいいアイデアを思い付いたらすぐにメモします（自分で作ったTODOリストアプリに記録しています）。
+                    その改善アイデアのメモを見て、AIと相談しながら実装して、アプリの改善を繰り返していきます。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative flex gap-3 md:gap-6">
+              <div className="relative shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-background border-2 border-tech-cyan flex items-center justify-center font-bold text-tech-cyan text-sm md:text-base z-10">
+                03
+              </div>
+              <div className="flex-1 pt-1 md:pt-2">
+                <h3 className="text-lg md:text-xl font-bold font-heading mb-2 text-tech-cyan">
+                  継続的な改善
+                </h3>
+                <div className="p-4 md:p-6 bg-card border border-border rounded-lg">
+                  <p className="text-sm md:text-base text-foreground leading-relaxed">
+                    自分で使用頻度が高いアプリはやっぱり改善アイデアもたくさん出てくるし、改善することで自分に恩恵が受けられるのでモチベーションになります。
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -187,39 +191,33 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6 max-w-4xl">
           {/* Yarukoto */}
           <article className="group relative p-6 bg-card border border-border rounded-lg card-hover-lift">
             <div className="absolute top-0 left-0 w-1 h-full tech-gradient rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative pl-4 space-y-4">
+            <div className="relative pl-4 space-y-3">
               <h3 className="text-2xl font-bold font-heading group-hover:tech-gradient-text transition-all">
                 Yarukoto
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                リンク共有で共同チェックできる、やること／持ち物の管理
+                「今日やること」を中心にした、シンプルな日々のタスク管理アプリ。既存のTODOアプリは多機能すぎて短期タスクの管理には向いていないと感じ、ガントチャートもサブタスクも必要ない「今日〜1週間程度」のタスクをサッと整理できるものを作りました。
               </p>
-              <div className="pt-2 border-t border-border/50">
-                <p className="text-sm text-muted-foreground mb-3">
-                  <span className="font-medium text-foreground">設計メモ：</span>
-                  登録なしでも使える体験を優先して設計しました
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  {PROFILE_LINKS.yarukoto.demo && (
-                    <a href={PROFILE_LINKS.yarukoto.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
-                      Demo
-                    </a>
-                  )}
-                  {PROFILE_LINKS.yarukoto.repo && (
-                    <a href={PROFILE_LINKS.yarukoto.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
-                      Repo
-                    </a>
-                  )}
-                  {PROFILE_LINKS.yarukoto.blog && (
-                    <Link href={PROFILE_LINKS.yarukoto.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
-                      Blog
-                    </Link>
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {PROFILE_LINKS.yarukoto.demo && (
+                  <a href={PROFILE_LINKS.yarukoto.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                    Demo
+                  </a>
+                )}
+                {PROFILE_LINKS.yarukoto.repo && (
+                  <a href={PROFILE_LINKS.yarukoto.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
+                    Repo
+                  </a>
+                )}
+                {PROFILE_LINKS.yarukoto.blog && (
+                  <Link href={PROFILE_LINKS.yarukoto.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                    Blog
+                  </Link>
+                )}
               </div>
             </div>
           </article>
@@ -227,28 +225,22 @@ export default function AboutPage() {
           {/* Monster Call */}
           <article className="group relative p-6 bg-card border border-border rounded-lg card-hover-lift">
             <div className="absolute top-0 left-0 w-1 h-full tech-gradient rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative pl-4 space-y-4">
+            <div className="relative pl-4 space-y-3">
               <h3 className="text-2xl font-bold font-heading group-hover:tech-gradient-text transition-all">
                 Monster Call
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                AI音声で架電業務を自動化するアウトバウンド支援
+                自動音声アナウンスで架電を行い、結果をデータとして記録・管理するシステム。前職で開発に携わり、1日20万〜80万件のコール結果を扱う規模でした。大量データを前提としたクエリ設計やメモリオーバーフロー対策など、パフォーマンスを意識した実装を心がけました。
               </p>
-              <div className="pt-2 border-t border-border/50">
-                <p className="text-sm text-muted-foreground mb-3">
-                  <span className="font-medium text-foreground">設計メモ：</span>
-                  運用フローに合わせた管理画面と、ログの見え方を重視しました
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  <a href="https://monstercall.cans01.jp/" target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
-                    Site
-                  </a>
-                  {PROFILE_LINKS.monsterCall.blog && (
-                    <Link href={PROFILE_LINKS.monsterCall.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
-                      Blog
-                    </Link>
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <a href="https://monstercall.cans01.jp/" target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                  Site
+                </a>
+                {PROFILE_LINKS.monsterCall.blog && (
+                  <Link href={PROFILE_LINKS.monsterCall.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                    Blog
+                  </Link>
+                )}
               </div>
             </div>
           </article>
@@ -256,35 +248,29 @@ export default function AboutPage() {
           {/* Jansuko */}
           <article className="group relative p-6 bg-card border border-border rounded-lg card-hover-lift">
             <div className="absolute top-0 left-0 w-1 h-full tech-gradient rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative pl-4 space-y-4">
+            <div className="relative pl-4 space-y-3">
               <h3 className="text-2xl font-bold font-heading group-hover:tech-gradient-text transition-all">
-                あいフェス（じゃんスコ）
+                あいフェス
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                イベント向けに、当日の運用込みで使うWebアプリ
+                愛知県を中心とした高校の文化祭情報をまとめたサイト。日程や一般公開の有無など、外部から訪れたい人に必要な情報を集約し、いいねやコメント機能でコミュニティとしても盛り上がるように設計しました。同世代の友人と共同運営しています。
               </p>
-              <div className="pt-2 border-t border-border/50">
-                <p className="text-sm text-muted-foreground mb-3">
-                  <span className="font-medium text-foreground">設計メモ：</span>
-                  当日の導線と、詰まった時の逃げ道を先に作るようにしています
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  {PROFILE_LINKS.jansuko.demo && (
-                    <a href={PROFILE_LINKS.jansuko.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
-                      Demo
-                    </a>
-                  )}
-                  {PROFILE_LINKS.jansuko.repo && (
-                    <a href={PROFILE_LINKS.jansuko.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
-                      Repo
-                    </a>
-                  )}
-                  {PROFILE_LINKS.jansuko.blog && (
-                    <Link href={PROFILE_LINKS.jansuko.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
-                      Blog
-                    </Link>
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {PROFILE_LINKS.aifes.demo && (
+                  <a href={PROFILE_LINKS.aifes.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                    Demo
+                  </a>
+                )}
+                {PROFILE_LINKS.aifes.repo && (
+                  <a href={PROFILE_LINKS.aifes.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
+                    Repo
+                  </a>
+                )}
+                {PROFILE_LINKS.aifes.instagram && (
+                  <Link href={PROFILE_LINKS.aifes.instagram} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                    Instagram
+                  </Link>
+                )}
               </div>
             </div>
           </article>
