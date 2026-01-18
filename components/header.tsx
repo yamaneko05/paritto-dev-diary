@@ -6,7 +6,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between px-4">
-        <Link href="/" className="group flex items-center gap-2 transition-all duration-300">
+        <Link
+          href="/"
+          className="group flex items-center gap-2 transition-all duration-300"
+        >
           <div className="relative overflow-hidden rounded-lg">
             <Image
               src={"/icons/android-icon-192x192.png"}

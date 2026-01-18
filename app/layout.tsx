@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_JP, Noto_Sans_JP, JetBrains_Mono } from "next/font/google";
+import {
+  IBM_Plex_Sans_JP,
+  Noto_Sans_JP,
+  JetBrains_Mono,
+} from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -8,18 +12,18 @@ import "./globals.css";
 const ibmPlexSansJP = IBM_Plex_Sans_JP({
   subsets: ["latin"],
   variable: "--font-ibm-plex-sans-jp",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700"],
 });
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   variable: "--font-noto-sans-jp",
-  weight: ["400", "500"]
+  weight: ["400", "500"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono"
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +54,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning className="scroll-pt-16">
-      <body className={`${ibmPlexSansJP.variable} ${notoSansJP.variable} ${jetBrainsMono.variable} font-sans antialiased`}>
+      <body
+        className={`${ibmPlexSansJP.variable} ${notoSansJP.variable} ${jetBrainsMono.variable} font-sans antialiased`}
+      >
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

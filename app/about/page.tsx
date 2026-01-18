@@ -7,7 +7,8 @@ import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "開発者のプロフィール、経歴、技術スタック、制作物などをまとめています。",
+  description:
+    "開発者のプロフィール、経歴、技術スタック、制作物などをまとめています。",
 };
 
 export default function AboutPage() {
@@ -70,7 +71,8 @@ export default function AboutPage() {
             <p className="text-muted-foreground leading-relaxed">
               自分や友人が実際に使う前提で、小さく作って改善します。
               自分用のTODOリストアプリや、友達と麻雀をするときの点数管理アプリなど。
-              「とりあえず触れるものを出す → 使われ方を見て直す」のサイクルが好きです。
+              「とりあえず触れるものを出す →
+              使われ方を見て直す」のサイクルが好きです。
             </p>
           </div>
 
@@ -82,7 +84,8 @@ export default function AboutPage() {
               <span>設計と検証を早く回す</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Claude Codeを使っていて、以前と比べて作りたいと思ったものがAIの活用のおかげですぐに形にできるので、楽しいです。
+              Claude
+              Codeを使っていて、以前と比べて作りたいと思ったものがAIの活用のおかげですぐに形にできるので、楽しいです。
               コーディング量を減らして、要件整理・設計・検証に時間を使えるので、いまの自分には合っていると感じています。
             </p>
           </div>
@@ -204,17 +207,26 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 {PROFILE_LINKS.yarukoto.demo && (
-                  <a href={PROFILE_LINKS.yarukoto.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                  <a
+                    href={PROFILE_LINKS.yarukoto.demo}
+                    className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80"
+                  >
                     Demo
                   </a>
                 )}
                 {PROFILE_LINKS.yarukoto.repo && (
-                  <a href={PROFILE_LINKS.yarukoto.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
+                  <a
+                    href={PROFILE_LINKS.yarukoto.repo}
+                    className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80"
+                  >
                     Repo
                   </a>
                 )}
                 {PROFILE_LINKS.yarukoto.blog && (
-                  <Link href={PROFILE_LINKS.yarukoto.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                  <Link
+                    href={PROFILE_LINKS.yarukoto.blog}
+                    className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80"
+                  >
                     Blog
                   </Link>
                 )}
@@ -233,11 +245,19 @@ export default function AboutPage() {
                 自動音声アナウンスで架電を行い、結果をデータとして記録・管理するシステム。前職で開発に携わり、1日20万〜80万件のコール結果を扱う規模でした。大量データを前提としたクエリ設計やメモリオーバーフロー対策など、パフォーマンスを意識した実装を心がけました。
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <a href="https://monstercall.cans01.jp/" target="_blank" rel="noopener noreferrer" className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                <a
+                  href="https://monstercall.cans01.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80"
+                >
                   Site
                 </a>
                 {PROFILE_LINKS.monsterCall.blog && (
-                  <Link href={PROFILE_LINKS.monsterCall.blog} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                  <Link
+                    href={PROFILE_LINKS.monsterCall.blog}
+                    className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80"
+                  >
                     Blog
                   </Link>
                 )}
@@ -257,17 +277,26 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 {PROFILE_LINKS.aifes.demo && (
-                  <a href={PROFILE_LINKS.aifes.demo} className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80">
+                  <a
+                    href={PROFILE_LINKS.aifes.demo}
+                    className="px-3 py-1 bg-accent text-accent-foreground rounded font-medium hover:opacity-80"
+                  >
                     Demo
                   </a>
                 )}
                 {PROFILE_LINKS.aifes.repo && (
-                  <a href={PROFILE_LINKS.aifes.repo} className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80">
+                  <a
+                    href={PROFILE_LINKS.aifes.repo}
+                    className="px-3 py-1 bg-secondary text-secondary-foreground rounded font-medium hover:opacity-80"
+                  >
                     Repo
                   </a>
                 )}
                 {PROFILE_LINKS.aifes.instagram && (
-                  <Link href={PROFILE_LINKS.aifes.instagram} className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80">
+                  <Link
+                    href={PROFILE_LINKS.aifes.instagram}
+                    className="px-3 py-1 bg-primary text-primary-foreground rounded font-medium hover:opacity-80"
+                  >
                     Instagram
                   </Link>
                 )}
@@ -288,15 +317,20 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
           <div className="p-6 bg-card border border-border rounded-lg">
-            <h3 className="text-lg font-bold font-heading mb-3">言語 & フレームワーク</h3>
+            <h3 className="text-lg font-bold font-heading mb-3">
+              言語 & フレームワーク
+            </h3>
             <p className="text-foreground leading-relaxed mb-3">
               個人開発と仕事ではTypeScript、Next.jsを使っています。Next.jsは一番お気に入りです。
-              業務ではC#、.NETも使います。UIはTailwind CSS、shadcn/uiが好きです。
+              業務ではC#、.NETも使います。UIはTailwind
+              CSS、shadcn/uiが好きです。
             </p>
           </div>
 
           <div className="p-6 bg-card border border-border rounded-lg">
-            <h3 className="text-lg font-bold font-heading mb-3">AI & デプロイ</h3>
+            <h3 className="text-lg font-bold font-heading mb-3">
+              AI & デプロイ
+            </h3>
             <p className="text-foreground leading-relaxed mb-3">
               AIは個人開発ではClaude Codeを、業務ではCodexも使います。
               技術選定は、会社では技術スタックに従いますが、個人開発ではネット上の情報量の多さやAIとの相性、将来的に仕事として使えそうな技術かどうかを意識しています。
@@ -327,7 +361,9 @@ export default function AboutPage() {
                 <Github className="w-6 h-6 text-muted-foreground group-hover:text-accent transition-colors" />
                 <div className="flex-1">
                   <div className="font-medium font-heading">GitHub</div>
-                  <div className="text-sm text-muted-foreground">コードとプロジェクト</div>
+                  <div className="text-sm text-muted-foreground">
+                    コードとプロジェクト
+                  </div>
                 </div>
               </a>
             )}
@@ -342,7 +378,9 @@ export default function AboutPage() {
                 <Twitter className="w-6 h-6 text-muted-foreground group-hover:text-accent transition-colors" />
                 <div className="flex-1">
                   <div className="font-medium font-heading">X (Twitter)</div>
-                  <div className="text-sm text-muted-foreground">日々の開発記録</div>
+                  <div className="text-sm text-muted-foreground">
+                    日々の開発記録
+                  </div>
                 </div>
               </a>
             )}
@@ -355,7 +393,9 @@ export default function AboutPage() {
                 <Mail className="w-6 h-6 text-muted-foreground group-hover:text-accent transition-colors" />
                 <div className="flex-1">
                   <div className="font-medium font-heading">Email</div>
-                  <div className="text-sm text-muted-foreground">お問い合わせ</div>
+                  <div className="text-sm text-muted-foreground">
+                    お問い合わせ
+                  </div>
                 </div>
               </a>
             )}

@@ -15,7 +15,7 @@ export function Search({ posts }: SearchProps) {
 
   const filteredPosts = posts.filter((post) => {
     const searchTarget = `${post.title} ${post.description} ${post.tags.join(
-      " "
+      " ",
     )}`.toLowerCase();
     return searchTarget.includes(query.toLowerCase());
   });
@@ -51,7 +51,10 @@ export function Search({ posts }: SearchProps) {
             <div
               key={post.slug}
               className="animate-in fade-in slide-in-from-bottom-4"
-              style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
+              style={{
+                animationDelay: `${index * 50}ms`,
+                animationFillMode: "both",
+              }}
             >
               <PostCard post={post} />
             </div>

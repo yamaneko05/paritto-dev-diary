@@ -39,7 +39,7 @@ export function PostCard({ post }: PostCardProps) {
                   key={tag}
                   className="relative px-2.5 py-1 md:px-3 md:py-1 text-xs font-medium font-heading rounded border border-transparent overflow-hidden group/tag transition-all duration-300"
                   style={{
-                    animationDelay: `${index * 50}ms`
+                    animationDelay: `${index * 50}ms`,
                   }}
                 >
                   {/* Gradient background - always visible, more vibrant on hover */}

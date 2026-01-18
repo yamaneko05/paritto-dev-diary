@@ -73,12 +73,12 @@ Yarukotoでは「やらない」を選択すると、任意で理由を記録で
 
 Yarukotoは以下の技術スタックで構築しています。
 
-| 領域 | 技術 |
-|------|------|
+| 領域           | 技術                                |
+| -------------- | ----------------------------------- |
 | フロントエンド | Next.js / TypeScript / Tailwind CSS |
-| バックエンド | Supabase (PostgreSQL) |
-| 認証 | Better Auth |
-| ホスティング | Vercel |
+| バックエンド   | Supabase (PostgreSQL)               |
+| 認証           | Better Auth                         |
+| ホスティング   | Vercel                              |
 
 ### 設計上のこだわり
 
